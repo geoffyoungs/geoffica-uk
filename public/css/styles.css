@@ -1,0 +1,107 @@
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+
+@media only screen {
+    
+html, body { 
+    background: #0F2451;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.layer img {
+    position: absolute;
+}
+
+.scene {
+    display: block;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.scene .layer {
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1.0;
+    transition: opacity 1s;
+
+}
+.both.layer img {
+    max-height: 90vh;
+    max-width: 90vw;
+}
+.vert.layer img {
+    max-height: 100vh;
+}
+.horiz.layer img {
+    max-width: 100vw;
+}
+.left img {
+    left: 0;
+}
+.bottom img {
+    bottom: 0vh;
+}
+.right img {
+    right: 0;
+}
+.both img {
+    text-align: center;
+    left: 50vw;
+    margin-left: -50%;
+    transition: margin-left 1s;
+
+}
+.banner {
+    position: fixed;
+    background: #111;
+    font-family: Cabin, sans-serif;
+    font-size: 14px;
+    width: 100%;
+    margin: 0;
+    z-index: 500;
+    padding: 2px 20px;
+    text-align: center;
+    color: white;
+    min-height: 3vh;
+}
+.border {
+    position: fixed;
+    z-index: 400;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border: 2vw solid #111;
+    box-sizing: border-box;
+    /*box-shadow: inset 0 0 2vw black;*/
+}
+
+}
+
+
+@media only screen
+    and (min-width: 320px) 
+    and (max-width: 1000px) {
+    #container .scene li.layer.sparkles {
+        opacity: 0;
+    }
+}
+
+@media only screen 
+    and (min-width: 320px) 
+    and (max-width: 800px) {
+    #container .scene li.layer.right {
+        opacity: 0;
+    }
+        #container .both img {
+    text-align: center;
+    left: 50vw;
+    margin-left: -25%;
+}
+}
