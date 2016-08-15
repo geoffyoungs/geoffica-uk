@@ -29,7 +29,6 @@ html, body {
     height: 100vh;
     opacity: 1.0;
     transition: opacity 1s;
-
 }
 .both.layer img {
     max-height: 90vh;
@@ -45,7 +44,7 @@ html, body {
     left: 0;
 }
 .bottom img {
-    bottom: 0vh;
+    bottom: 0;
 }
 .right img {
     right: 0;
@@ -53,8 +52,8 @@ html, body {
 .both img {
     text-align: center;
     left: 50vw;
-    margin-left: -50%;
-    transition: margin-left 1s;
+    transform: translateX(-50%);
+    transition: transform 1s;
 
 }
 .banner {
@@ -84,11 +83,28 @@ html, body {
 
 }
 
+.sparkles {
+  animation-duration: 3s;
+  animation-name: flash;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+    animation-direction: alternate;
+}
+
+@keyframes flash {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0.25;
+  }
+}
+
 
 @media only screen
     and (min-width: 320px) 
     and (max-width: 1000px) {
-    #container .scene li.layer.sparkles {
+    #container .scene li.layer.sparkles.right {
         opacity: 0;
     }
 }
@@ -99,9 +115,13 @@ html, body {
     #container .scene li.layer.right {
         opacity: 0;
     }
+    #container .scene li.layer.right.sparkles {
+        display: none;
+        visibility: hidden;
+    }
         #container .both img {
     text-align: center;
     left: 50vw;
-    margin-left: -25%;
+    transform: translateX(-33%);
 }
 }
